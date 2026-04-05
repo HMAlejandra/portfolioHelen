@@ -50,7 +50,7 @@ export function Contact() {
                   <span className="w-14 h-14 rounded-full bg-foreground text-background flex items-center justify-center group-hover:bg-accent group-hover:scale-110 transition-all">
                     <Mail className="w-5 h-5" />
                   </span>
-                  hello@helenmoncayo.com
+                  helenmoncayo@gmail.com
                 </a>
               </Magnetic>
             </FadeIn>

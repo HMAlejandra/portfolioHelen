@@ -6,7 +6,7 @@ import { ArrowUpRight, Mail, Github, Linkedin, Twitter } from "lucide-react"
 const socialLinks = [
   { name: "GitHub", url: "https://github.com", icon: Github },
   { name: "LinkedIn", url: "https://linkedin.com", icon: Linkedin },
-  { name: "Twitter", url: "https://twitter.com", icon: Twitter },
+  
 ]
 
 export function Contact() {

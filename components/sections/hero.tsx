@@ -158,7 +158,7 @@ export function Hero() {
               whileTap={{ scale: 0.98 }}
               data-cursor-hover
             >
-              View Work
+              View My Work
               <motion.span
                 className="inline-block"
                 animate={{ x: [0, 4, 0] }}

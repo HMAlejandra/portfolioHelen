@@ -150,7 +150,7 @@ export function About() {
                   <div className="flex flex-col">
                     <span className="text-[10px] font-mono text-[#ff4d00] mb-1">Execute: download_cv.exe</span>
                     <span className="text-sm font-black uppercase tracking-[0.2em] text-[#111111] border-b-2 border-[#ff4d00]/0 group-hover:border-[#ff4d00] transition-all">
-                      Download-Resume
+                      Download Resume
                     </span>
                   </div>
                 </motion.a>

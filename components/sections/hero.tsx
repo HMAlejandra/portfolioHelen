@@ -87,9 +87,9 @@ export function Hero() {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover grayscale mix-blend-multiply opacity-80"
+            className="w-full h-full object-cover grayscale mix-blend-multiply"
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.8, scale: 1 }}
+            animate={{ opacity: 0.9, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <source src="/perfil-cyborg.mp4" type="video/mp4" />
@@ -117,7 +117,7 @@ export function Hero() {
           {/* Giant Name - Single Line with Letter Animation */}
           <div className="overflow-hidden mb-6 md:mb-10">
             <h1 
-              className="font-serif font-bold leading-none tracking-tighter text-white whitespace-nowrap"
+              className="font-serif font-extrabold leading-none tracking-tighter text-white whitespace-nowrap"
               style={{ 
                 fontSize: "clamp(2.5rem, 12vw, 11rem)",
                 perspective: "1000px"

@@ -50,8 +50,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased">
+    // Mantenemos la carga de variables de fuente para que el CSS las reconozca
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+      <body 
+        className="font-sans antialiased" 
+        // Esta es la propiedad clave que evita el error 'cz-shortcut-listen'
+        suppressHydrationWarning
+      >
         {children}
         <Analytics />
       </body>

@@ -1,11 +1,23 @@
 "use client"
 
+// Importamos motion y AnimatePresence para que no te dé el error 500
+import { motion, AnimatePresence } from "framer-motion"
 import { FadeIn, TextReveal, Magnetic, LineReveal } from "@/components/animations"
 import { ArrowUpRight, Mail, Github, Linkedin, MessageSquare } from "lucide-react"
 
 const socialLinks = [
-  { name: "GitHub", url: "https://github.com/helenmoncayo", icon: Github, label: "source_code" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/helenmoncayo", icon: Linkedin, label: "professional_net" },
+  { 
+    name: "GitHub", 
+    url: "https://github.com/helenmoncayo", 
+    icon: Github, 
+    label: "source_code" 
+  },
+  { 
+    name: "LinkedIn", 
+    url: "https://linkedin.com/in/helenmoncayo", 
+    icon: Linkedin, 
+    label: "professional_net" 
+  },
 ]
 
 export function Contact() {
@@ -13,13 +25,16 @@ export function Contact() {
     <section 
       id="contact" 
       className="py-32 md:py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden"
-      style={{ backgroundColor: '#fcfaf7' }}
+      style={{ backgroundColor: '#fcfaf7' }} // Fondo beige sofisticado
     >
-      {/* --- DECORACIÓN TÉCNICA (PCB) --- */}
+      {/* --- DECORACIÓN TÉCNICA: LÍNEAS DE CIRCUITO (PCB) --- */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none">
         <path d="M0 600h300v-200h400v-400" fill="none" stroke="#ff4d00" strokeWidth="1" />
         <circle cx="700" cy="0" r="4" fill="#ff4d00" />
       </svg>
+      <div className="absolute top-40 right-10 font-mono text-[#ff4d00] opacity-[0.03] text-9xl select-none">
+        CONTACT
+      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-start">
@@ -106,6 +121,7 @@ export function Contact() {
                     <motion.div 
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
+                      transition={{ duration: 1, delay: 0.5 }}
                       className="absolute inset-0 bg-[#ff4d00]/20 origin-left" 
                     />
                   </div>
@@ -116,7 +132,7 @@ export function Contact() {
             {/* STATUS CARD: Estilo Dashboard de Ingeniería */}
             <FadeIn delay={0.8}>
               <div className="p-8 bg-[#111111] rounded-sm relative overflow-hidden group shadow-2xl">
-                {/* Decoración interna de la tarjeta */}
+                {/* Esquinas decorativas blancas sutiles */}
                 <div className="absolute top-0 right-0 p-4 font-mono text-[40px] text-white opacity-[0.03] select-none">
                   UCC
                 </div>
@@ -151,14 +167,14 @@ export function Contact() {
           </div>
         </div>
 
-        {/* FOOTER SIMPLE */}
+        {/* FOOTER */}
         <div className="mt-32 pt-8 border-t border-[#111111]/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] font-mono text-[#111111]/40 uppercase tracking-widest">
-            © 2026 Helen Moncayo — Engineer Portfolio
+            © 2026 Helen Moncayo — Software Engineer Portfolio
           </p>
           <div className="flex gap-8">
-            <span className="text-[10px] font-mono text-[#ff4d00]">Built with Next.js</span>
-            <span className="text-[10px] font-mono text-[#111111]/40">Pasto, Colombia</span>
+            <span className="text-[10px] font-mono text-[#ff4d00]">Built with Next.js & Framer Motion</span>
+            <span className="text-[10px] font-mono text-[#111111]/40">Pasto, Narino</span>
           </div>
         </div>
       </div>

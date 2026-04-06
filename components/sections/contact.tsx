@@ -51,7 +51,7 @@ export function Contact() {
             </FadeIn>
             
             <h2 className="text-6xl md:text-8xl font-serif leading-[0.9] text-[#111111] mb-12">
-              <TextReveal>{`Let's build`}</TextReveal> <br />
+              <TextReveal>{`Let's work together`}</TextReveal> <br />
               <span className="text-[#ff4d00] italic"><TextReveal delay={0.2}>the future</TextReveal></span>
             </h2>
 

@@ -51,14 +51,22 @@ export function Contact() {
         <div className="grid lg:grid-cols-2 gap-24 mb-40">
           <div>
             {/* SOLUCIÓN AL CORTE: Añadimos pr-10 para que la cursiva no se corte */}
-            <h2 className="text-6xl md:text-8xl font-serif leading-[1.1] mb-12 overflow-visible pr-10">
-              <div className="overflow-visible">
-                <TextReveal>{`Let's work`}</TextReveal>
-              </div>
-              <span className="text-[#ff4d00] italic block mt-2 overflow-visible">
-                <TextReveal delay={0.2}>together</TextReveal>
-              </span>
-            </h2>
+            <h2 className="text-6xl md:text-8xl font-serif leading-[1.2] mb-12 pr-10">
+  {/* Primera línea normal */}
+  <div className="overflow-visible">
+    <TextReveal>{`Let's work`}</TextReveal>
+  </div>
+  
+  {/* Segunda línea corregida para que NO se corte */}
+  <span className="text-[#ff4d00] italic block mt-4 overflow-visible px-6 -ml-6">
+    <motion.div 
+      className="overflow-visible" 
+      style={{ display: 'inline-block' }}
+    >
+      <TextReveal delay={0.2}>together</TextReveal>
+    </motion.div>
+  </span>
+</h2>
             
             <FadeIn delay={0.4}>
               <div className="border-l-2 border-[#ff4d00] pl-8 mb-12 opacity-70 italic text-xl max-w-md">

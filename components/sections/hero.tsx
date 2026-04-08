@@ -143,7 +143,7 @@ export function Hero() {
             <motion.a
               href="#contact"
               className="text-sm text-white font-bold border-b-2 border-white/30 hover:border-white transition-all pb-1 uppercase tracking-widest"
-              whileHover={{ y: -2 }}
+              whileHover={{ y: -3 }}
             >
               Get in touch
             </motion.a>

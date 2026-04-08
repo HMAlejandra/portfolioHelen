@@ -13,7 +13,7 @@ function AnimatedLetter({ letter, index }: { letter: string; index: number }) {
       transition={{
         duration: 0.4,
         delay: 0.5 + index * 0.5,
-        ease: [0.215, 0.61, 0.355, 1],
+        ease: [0.215, 0.61, 0.355],
       }}
       style={{ 
         transformOrigin: "bottom",

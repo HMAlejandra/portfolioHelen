@@ -74,7 +74,7 @@ export function Hero() {
             className="w-full h-full object-cover grayscale opacity-60" // Ajustada opacidad para legibilidad
             initial={{ opacity: 0, scale: 1.3}}
             animate={{ opacity: 0.6, scale: 1 }}
-            transition={{ duration: 1.2 }}
+            transition={{ duration: 1.5 }}
           >
             <source src="/perfil-cyborg.mp4" type="video/mp4" />
           </motion.video>

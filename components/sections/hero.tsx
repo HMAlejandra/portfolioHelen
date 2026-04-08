@@ -102,7 +102,7 @@ export function Hero() {
             <h1 
               className="font-serif font-extrabold leading-[0.8] tracking-tighter text-white uppercase"
               style={{ 
-                fontSize: "clamp(2.5rem, 15vw, 12rem)", // Aumentado el responsive
+                fontSize: "clamp(2.5rem, 15vw, 12rem)",
                 perspective: "1000px"
               }}
             >

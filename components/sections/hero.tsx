@@ -136,7 +136,7 @@ export function Hero() {
               href="#projects"
               className="group inline-flex items-center gap-3 px-8 py-4 bg-[#ff4d00] text-white rounded-full text-sm font-bold transition-all hover:bg-white hover:text-[#ff4d00] shadow-xl"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 1 }}
+              whileTap={{ scale: 10 }}
             >
               View My Work
               <svg width="18" height="18" viewBox="0 0 16 16" fill="none" className="group-hover:translate-x-1 transition-transform">

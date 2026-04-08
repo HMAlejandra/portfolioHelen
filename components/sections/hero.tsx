@@ -46,8 +46,8 @@ export function Hero() {
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return
       const rect = containerRef.current.getBoundingClientRect()
-      const x = (e.clientX - rect.left) / rect.width - 0.5
-      const y = (e.clientY - rect.top) / rect.height - 0.5
+      const x = (e.clientX - rect.left) / rect.width - 0.1
+      const y = (e.clientY - rect.top) / rect.height - 0.1
       mouseX.set(x)
       mouseY.set(y)
     }

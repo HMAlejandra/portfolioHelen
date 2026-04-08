@@ -11,7 +11,7 @@ function AnimatedLetter({ letter, index }: { letter: string; index: number }) {
       initial={{ y: 120, opacity: 0, rotateX: -80 }}
       animate={{ y: 0, opacity: 1, rotateX: 0 }}
       transition={{
-        duration: 0.8,
+        duration: 0.4,
         delay: 0.5 + index * 0.05,
         ease: [0.215, 0.61, 0.355, 1],
       }}

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 
-// Letter animation component for staggered
+// Letter animation component for staggered entrance with 3D flip effect
 function AnimatedLetter({ 
   letter, 
   index, 

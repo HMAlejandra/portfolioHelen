@@ -55,7 +55,7 @@ export function Hero() {
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [isClient, mouseX, mouseY])
 
-  const name = "HELEN MONCAYO"
+  const name = ""
   const letters = name.split("")
 
   return (

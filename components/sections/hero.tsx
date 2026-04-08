@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 
-// Letter animation component for staggered reveal
+// Letter animation component for staggered
 function AnimatedLetter({ 
   letter, 
   index, 

@@ -3,16 +3,8 @@
 import { useState, useEffect, useRef } from "react"
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 
-// Letter animation component for staggered entrance with 3D flip effect
-function AnimatedLetter({ 
-  letter, 
-  index, 
-  totalLetters 
-}: { 
-  letter: string
-  index: number
-  totalLetters: number 
-}) {
+// Componente de letra animada
+function AnimatedLetter({ letter, index }: { letter: string; index: number }) {
   return (
     <motion.span
       className="inline-block"
@@ -51,7 +43,6 @@ export function Hero() {
 
   useEffect(() => {
     if (!isClient) return
-
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return
       const rect = containerRef.current.getBoundingClientRect()
@@ -60,7 +51,6 @@ export function Hero() {
       mouseX.set(x)
       mouseY.set(y)
     }
-
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [isClient, mouseX, mouseY])
@@ -71,42 +61,35 @@ export function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#ff4d00]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#111]" // Fondo base oscuro
     >
-      {/* Video with grayscale and multiply blend - creates red/black tint effect */}
+      {/* Video de fondo */}
       {isClient && (
         <motion.div
           className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          style={{
-            x: videoX,
-            y: videoY,
-          }}
+          style={{ x: videoX, y: videoY }}
         >
           <motion.video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover grayscale mix-blend-multiply"
+            autoPlay loop muted playsInline
+            className="w-full h-full object-cover grayscale opacity-60" // Ajustada opacidad para legibilidad
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.9, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            animate={{ opacity: 0.6, scale: 1 }}
+            transition={{ duration: 1.2 }}
           >
             <source src="/perfil-cyborg.mp4" type="video/mp4" />
           </motion.video>
         </motion.div>
       )}
 
-      {/* Dark overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none z-[1]" />
+      {/* Overlay de gradiente */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 pointer-events-none z-[1]" />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-[95vw] mx-auto px-4 md:px-8">
+      {/* Contenido Principal */}
+      <div className="relative z-10 w-full max-w-[95vw] mx-auto px-4">
         <div className="flex flex-col items-center text-center">
           
-          {/* Small intro text */}
           <motion.p 
-            className="text-white/80 text-[10px] md:text-xs tracking-[0.4em] uppercase mb-6 md:mb-10 font-sans font-medium"
+            className="text-white/90 text-[10px] md:text-xs tracking-[0.4em] uppercase mb-6 font-sans font-bold drop-shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -114,29 +97,27 @@ export function Hero() {
             Software Engineer & Creative Developer
           </motion.p>
 
-          {/* Giant Name - Single Line with Letter Animation */}
-          <div className="overflow-hidden mb-6 md:mb-10">
+          {/* Nombre con corrección de Overflow */}
+          <div className="mb-6 md:mb-10 px-4"> 
             <h1 
-              className="font-serif font-extrabold leading-none tracking-tighter text-white whitespace-nowrap"
+              className="font-serif font-extrabold leading-[0.8] tracking-tighter text-white uppercase"
               style={{ 
-                fontSize: "clamp(2.5rem, 12vw, 11rem)",
+                fontSize: "clamp(2.5rem, 15vw, 12rem)", // Aumentado el responsive
                 perspective: "1000px"
               }}
             >
-              {letters.map((letter, index) => (
-                <AnimatedLetter
-                  key={index}
-                  letter={letter}
-                  index={index}
-                  totalLetters={letters.length}
-                />
-              ))}
+              {/* Contenedor flexible para evitar corte lateral */}
+              <div className="flex flex-wrap justify-center gap-x-[0.1em]">
+                {letters.map((letter, index) => (
+                  <AnimatedLetter key={index} letter={letter} index={index} />
+                ))}
+              </div>
             </h1>
           </div>
 
-          {/* Tagline */}
+          {/* Tagline con Drop Shadow (Solución a invisibilidad) */}
           <motion.p 
-            className="text-white/70 text-sm md:text-base lg:text-lg leading-relaxed font-sans font-light max-w-xl mb-10 md:mb-14"
+            className="text-white text-sm md:text-lg leading-relaxed font-sans font-medium max-w-2xl mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
@@ -144,7 +125,7 @@ export function Hero() {
             Building digital experiences that merge creativity, technology, and human-centered design.
           </motion.p>
 
-          {/* CTA Button - Pill shaped */}
+          {/* Botones */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -153,51 +134,18 @@ export function Hero() {
           >
             <motion.a
               href="#projects"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#ff4d00] rounded-full text-sm font-semibold transition-all hover:bg-black hover:text-white"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-[#ff4d00] text-white rounded-full text-sm font-bold transition-all hover:bg-white hover:text-[#ff4d00] shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              data-cursor-hover
             >
               View My Work
-              <motion.span
-                className="inline-block"
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </motion.span>
-            </motion.a>
-            
-            <motion.a
-              href="#contact"
-              className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors font-medium border-b border-white/40 hover:border-white pb-1"
-              whileHover={{ scale: 1.02 }}
-              data-cursor-hover
-            >
-              Get in touch
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="none" className="group-hover:translate-x-1 transition-transform">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </motion.a>
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.8, duration: 0.8 }}
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
-        >
-          <span className="text-[10px] text-white/50 tracking-widest uppercase font-sans">Scroll</span>
-          <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent" />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

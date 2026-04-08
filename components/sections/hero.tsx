@@ -7,7 +7,7 @@ function AnimatedLetter({ letter, index }: { letter: string; index: number }) {
   return (
     <motion.span
       className="inline-block"
-      initial={{ y: 120, opacity: 0, rotateX: -80 }}
+      initial={{ y: 120, opacity: 0, rotateX: -100 }}
       animate={{ y: 0, opacity: 1, rotateX: 0 }}
       transition={{
         duration: 0.8,

@@ -72,7 +72,7 @@ export function Hero() {
           <motion.video
             autoPlay loop muted playsInline
             className="w-full h-full object-cover grayscale opacity-60" // Ajustada opacidad para legibilidad
-            initial={{ opacity: 0, scale: 1.1 }}
+            initial={{ opacity: 0, scale: 1.3}}
             animate={{ opacity: 0.6, scale: 1 }}
             transition={{ duration: 1.2 }}
           >

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { Providers } from '@/components/providers'
 import './globals.css'
 
 const inter = Inter({ 
@@ -18,24 +19,6 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'Helen Moncayo | Software Engineer & Creative Developer',
   description: 'I design and build digital experiences that merge design, technology, and intelligent systems.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
 }
 
 export const viewport: Viewport = {
@@ -50,14 +33,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    // Mantenemos la carga de variables de fuente para que el CSS las reconozca
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
-      <body 
-        className="font-sans antialiased" 
-        // Esta es la propiedad clave que evita el error 'cz-shortcut-listen'
-        suppressHydrationWarning
-      >
-        {children}
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <Providers>
+          {children}
+        </Providers>
         <Analytics />
       </body>
     </html>

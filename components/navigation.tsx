@@ -23,7 +23,7 @@ export function Navigation() {
     { key: "Projects", href: "#projects" },
     { key: "Experience", href: "#experience" },
     { key: "Testimonials", href: "#testimonials" },
-    { key: "nav.contact", href: "#contact" },
+    { key: "Contact", href: "#contact" },
   ]
 
   return (

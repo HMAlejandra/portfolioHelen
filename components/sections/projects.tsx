@@ -12,7 +12,7 @@ const projects = [
     title: "Code Runner: Invisible Master",
     description: "A narrative 2D puzzle game built to teach block-based programming concepts. Merging narrative with computational thinking.",
     tags: ["Unity", "C#", "Game Design", "Logic"],
-    image: "/retrato.png", // Cámbiala por tu imagen real del proyecto
+    image: "/retrato.png", // change for imagen real del proyecto
     link: "https://demo.example.com",
     github: "https://github.com/helenmoncayo",
   },

@@ -13,7 +13,6 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Left */}
             <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
               <span className="text-lg font-serif">
                 Helen Moncayo<span className="text-accent">.</span>
@@ -22,13 +21,10 @@ export function Footer() {
                 Designed & Built with care
               </span>
             </div>
-
-            
             <div className="flex items-center gap-8">
               <span className="text-sm text-muted-foreground">
                 {new Date().getFullYear()} All rights reserved
               </span>
-              
               <Magnetic>
                 <button
                   onClick={scrollToTop}

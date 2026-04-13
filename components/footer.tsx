@@ -23,7 +23,7 @@ export function Footer() {
               </span>
             </div>
 
-            {/* Right */}
+            
             <div className="flex items-center gap-8">
               <span className="text-sm text-muted-foreground">
                 {new Date().getFullYear()} All rights reserved

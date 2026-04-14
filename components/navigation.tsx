@@ -12,7 +12,7 @@ export function Navigation() {
 
   const { scrollY } = useScroll()
   const { lang, setLang, t } = useLang()
-  const { theme, toggleTheme } = useTheme()
+ 
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50)

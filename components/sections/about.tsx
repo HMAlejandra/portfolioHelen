@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from "react"
 import Image from "next/image"
 import { FadeIn, StoryTextReveal } from "@/components/animations"
 import { useLang } from "@/components/providers"
+import { AnimatedBackground } from "@/components/animated-background"
 
 // Contador animado
 function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -115,6 +116,7 @@ export function About() {
       className="py-32 md:py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-[#f5f3ef] dark:bg-[#111111]"
     >
       {/* Fondo animado con partículas */}
+      <AnimatedBackground />
 
       {/* PCB lines decorativas */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none z-[1]">

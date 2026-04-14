@@ -11,7 +11,7 @@ interface Particle {
   opacity: number
 }
 
-export function animatedBackground() {
+export function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {

@@ -6,6 +6,7 @@ import Image from "next/image"
 import { FadeIn, TextReveal } from "@/components/animations"
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react"
 import { useLang } from "@/components/providers"
+import { AnimatedBackground } from "@/components/animated-background"
 
 const testimonials = [
   {
@@ -85,15 +86,15 @@ export function Testimonials() {
       ref={sectionRef}
       className="py-32 md:py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-background"
     >
-      <svg className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none" aria-hidden>
+      {/* Fondo animado */}
+      <AnimatedBackground />
+
+      <svg className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none z-[1]" aria-hidden>
         <path d="M200 0v150h400v80" fill="none" stroke="#ff4d00" strokeWidth="1" />
         <circle cx="600" cy="230" r="3" fill="#ff4d00" />
         <path d="M900 500h-200v-150" fill="none" stroke="#ff4d00" strokeWidth="1" />
         <circle cx="700" cy="350" r="3" fill="#ff4d00" />
       </svg>
-      <div className="absolute top-24 right-[10%] font-mono text-[#ff4d00] opacity-[0.06] text-xs select-none pointer-events-none">
-        {"<testimonials />"}
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeIn>
@@ -109,11 +110,18 @@ export function Testimonials() {
           </div>
         </FadeIn>
 
-        <div className="mb-16">
-          <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] mb-4">
+        {/* TÍTULO CORREGIDO — overflow-visible + pb para que no se corte */}
+        <div className="mb-16 overflow-visible pb-4">
+          <h2
+            className="font-serif leading-[0.9] mb-2 overflow-visible"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)", paddingBottom: "0.15em" }}
+          >
             <TextReveal delay={0.1}>{t("test.title")}</TextReveal>
           </h2>
-          <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] text-[#ff4d00]">
+          <h2
+            className="font-serif leading-[0.9] text-[#ff4d00] overflow-visible"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)", paddingBottom: "0.15em" }}
+          >
             <TextReveal delay={0.2}>{t("test.title2")}</TextReveal>
           </h2>
         </div>

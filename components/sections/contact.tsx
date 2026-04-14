@@ -32,7 +32,7 @@ function EscapeCard() {
         </span>
         <span className="font-mono text-[10px] tracking-widest uppercase opacity-70">System_Status: Online</span>
       </div>
-      <h4 className="text-xl font-serif mb-2">Available for new challenges</h4>
+      <h4 className="text-xl font-serif mb-2">Available for new </h4>
       <p className="text-xs font-mono opacity-60 leading-relaxed italic text-left">
         {`> Location: Pasto, Colombia`} <br /> {`> Focus: Software & AI`}
       </p>

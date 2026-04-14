@@ -337,6 +337,34 @@ export function About() {
               <StatCard value={10} suffix="+" label="Projects built"  delay={0.6} />
               <StatCard value={5}  suffix="+" label="Technologies"    delay={0.7} />
             </motion.div>
+
+            {/* CV download — columna izquierda */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <motion.a
+                href="/CV_Helen_Moncayo.pdf"
+                target="_blank"
+                className="group flex items-center gap-5"
+                whileHover={{ x: 6 }}
+              >
+                <div className="relative flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full border-2 border-[#ff4d00] flex items-center justify-center group-hover:bg-[#ff4d00] transition-all duration-500">
+                    <span className="text-[#ff4d00] group-hover:text-white text-lg transition-all">↓</span>
+                  </div>
+                  <div className="absolute inset-0 rounded-full border border-[#ff4d00]/30 scale-125 animate-pulse" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-mono text-[#ff4d00] mb-1">{t("about.cv.cmd")}</span>
+                  <span className="text-sm font-black uppercase tracking-[0.2em] text-[#111111] dark:text-white border-b-2 border-[#ff4d00]/0 group-hover:border-[#ff4d00] transition-all">
+                    {t("about.cv.btn")}
+                  </span>
+                </div>
+              </motion.a>
+            </motion.div>
           </div>
 
           {/* ── Col derecha: texto + tabs acordeón ── */}
@@ -420,28 +448,7 @@ export function About() {
               </AnimatePresence>
             </motion.div>
 
-            {/* CV download */}
-            <FadeIn delay={1.2} className="pt-4">
-              <motion.a
-                href="/CV_Helen_Moncayo.pdf"
-                target="_blank"
-                className="group flex items-center gap-6"
-                whileHover={{ x: 10 }}
-              >
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-full border-2 border-[#ff4d00] flex items-center justify-center group-hover:bg-[#ff4d00] transition-all duration-500">
-                    <span className="text-[#ff4d00] group-hover:text-white text-xl transition-all">↓</span>
-                  </div>
-                  <div className="absolute inset-0 rounded-full border border-[#ff4d00]/30 scale-125 animate-pulse" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-mono text-[#ff4d00] mb-1">{t("about.cv.cmd")}</span>
-                  <span className="text-sm font-black uppercase tracking-[0.2em] text-[#111111] dark:text-white border-b-2 border-[#ff4d00]/0 group-hover:border-[#ff4d00] transition-all">
-                    {t("about.cv.btn")}
-                  </span>
-                </div>
-              </motion.a>
-            </FadeIn>
+
           </div>
         </div>
       </div>

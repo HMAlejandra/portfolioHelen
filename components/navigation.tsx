@@ -18,13 +18,8 @@ export function Navigation() {
     setIsScrolled(latest > 50)
   })
 
-  const navItems = [
-    { key: "About", href: "#about" },
-    { key: "Projects", href: "#projects" },
-    { key: "Experience", href: "#experience" },
-    { key: "Testimonials", href: "#testimonials" },
-    { key: "Contact", href: "#contact" },
-  ]
+ 
+  
 
   return (
     <>

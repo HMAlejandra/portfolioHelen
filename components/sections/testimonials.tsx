@@ -236,7 +236,7 @@ export function Testimonials() {
               </motion.button>
             ))}
 
-            {/* Hint para reemplazar fotos */}
+            {/* Hint para reemplazar pictures */}
             <div className="mt-6 p-3 rounded-lg border border-dashed border-[#ff4d00]/30 bg-[#ff4d00]/5">
               <p className="text-[9px] font-mono text-[#ff4d00]/60 text-center leading-relaxed">
                 {lang === "en"

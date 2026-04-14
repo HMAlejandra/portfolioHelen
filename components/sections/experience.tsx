@@ -11,8 +11,8 @@ const experiences = [
   {
     period_en: "2026 — Present",
     period_es: "2026 — Presente",
-    role_en: "Full Stack Developer",
-    role_es: "Desarrolladora Full Stack",
+    role_en: "Software Engineer",
+    role_es: "Ingeniera de Software",
     company: "Freelance & Personal Projects",
     companyUrl: "https://github.com/HMAlejandra",
     description_en: "Building end-to-end web applications for clients and academic projects. Designing responsive UIs with Next.js and TailwindCSS, integrating REST APIs and deploying on AWS (EC2, S3, Amplify). Focus on clean code and user experience.",

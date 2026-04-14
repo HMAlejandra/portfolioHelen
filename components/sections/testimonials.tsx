@@ -11,7 +11,7 @@ import { AnimatedBackground } from "@/components/animated-background"
 const testimonials = [
   {
     id: 1,
-    name: "Carlos Jiménez",
+    name: "Daniel Arteaga",
     role_en: "Professor of Software Engineering",
     role_es: "Profesor de Ingeniería de Software",
     company: "Universidad Cooperativa de Colombia",

@@ -9,7 +9,7 @@ import { useLang, useTheme } from "@/components/providers"
 import { AnimatedBackground } from "@/components/animated-background"
 
 const socialLinks = [
-  { name: "GitHub",   url: "https://github.com/helenmoncayo",    icon: Github },
+  { name: "GitHub",   url: "https://github.com/HMAlejandra",    icon: Github },
   { name: "LinkedIn", url: "https://linkedin.com/in/helenmoncayo", icon: Linkedin },
 ]
 

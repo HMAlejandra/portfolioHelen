@@ -9,12 +9,12 @@ import { AnimatedBackground } from "@/components/animated-background"
 
 const experiences = [
   {
-    period_en: "2024 — Present",
-    period_es: "2024 — Presente",
+    period_en: "2026 — Present",
+    period_es: "2026 — Presente",
     role_en: "Full Stack Developer",
     role_es: "Desarrolladora Full Stack",
     company: "Freelance & Personal Projects",
-    companyUrl: "https://github.com/helenmoncayo",
+    companyUrl: "https://github.com/HMAlejandra",
     description_en: "Building end-to-end web applications for clients and academic projects. Designing responsive UIs with Next.js and TailwindCSS, integrating REST APIs and deploying on AWS (EC2, S3, Amplify). Focus on clean code and user experience.",
     description_es: "Construyendo aplicaciones web de extremo a extremo para clientes y proyectos académicos. Diseñando interfaces con Next.js y TailwindCSS, integrando APIs REST y desplegando en AWS (EC2, S3, Amplify). Enfoque en código limpio y experiencia de usuario.",
     technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "AWS", "Node.js"],

@@ -11,15 +11,9 @@ interface LangContextType {
 }
 
 const translations: Record<string, Record<Lang, string>> = {
-  "nav.about":        { en: "About",        es: "Sobre mí" },
-  "nav.projects":     { en: "Projects",     es: "Proyectos" },
-  "nav.experience":   { en: "Experience",   es: "Experiencia" },
-  "nav.testimonials": { en: "Testimonials", es: "Testimonios" },
-  "nav.contact":      { en: "Contact",      es: "Contacto" },
-  "exp.title":        { en: "Where I've built", es: "Dónde he construido" },
-  "exp.title2":       { en: "& learned",    es: "& aprendido" },
-  "test.title":       { en: "What people",  es: "Lo que dicen" },
-  "test.title2":      { en: "say about me", es: "de mí" },
+  "hello": {
+    en: "Hello",
+    es: "Hola",
 }
 
 const LangContext = createContext<LangContextType>({

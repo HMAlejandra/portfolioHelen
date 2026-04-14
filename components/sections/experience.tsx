@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import { ArrowUpRight, Code2, Layers, Cpu, Globe, BookOpen } from "lucide-react"
 import { useRef } from "react"
 import { useLang } from "@/components/providers"
+import { AnimatedBackground } from "@/components/animated-background"
 
 const experiences = [
   {
@@ -76,6 +77,8 @@ export function Experience() {
       ref={sectionRef}
       className="py-32 md:py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-background"
     >
+      {/* Fondo animado */}
+      <AnimatedBackground />
 
       <div className="max-w-7xl mx-auto relative z-10">
 

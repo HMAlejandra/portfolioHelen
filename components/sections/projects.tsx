@@ -17,9 +17,9 @@ export function Projects() {
       titleKey: "projects.1.title",
       descKey: "projects.1.desc",
       tags: ["Unity", "C#", "Game Design", "Logic"],
-      image: "/retrato.png",
+      image: "/music.png",
       link: "https://demo.example.com",
-      github: "https://github.com/helenmoncayo",
+      github: "https://github.com/HMAlejandra",
     },
     {
       id: 2,

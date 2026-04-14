@@ -12,7 +12,7 @@ export function Navigation() {
 
   const { scrollY } = useScroll()
   const { lang, setLang, t } = useLang()
- 
+  const { theme, toggleTheme } = useTheme()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50)
@@ -23,6 +23,7 @@ export function Navigation() {
     { key: "nav.projects",     href: "#projects" },
     { key: "nav.experience",   href: "#experience" },
     { key: "nav.testimonials", href: "#testimonials" },
+    { key: "nav.contact",      href: "#contact" },
   ]
 
   return (
@@ -41,7 +42,7 @@ export function Navigation() {
 
           {/* Logo */}
           <Magnetic strength={6}>
-            
+            <a
               href="#"
               className="text-lg font-serif tracking-tight text-white font-bold drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
               data-cursor-hover
@@ -60,7 +61,7 @@ export function Navigation() {
                 transition={{ delay: 0.1 + index * 0.1 }}
               >
                 <Magnetic strength={6}>
-                  
+                  <a
                     href={item.href}
                     className={`text-sm font-bold transition-colors relative group drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] ${
                       isScrolled
@@ -117,6 +118,7 @@ export function Navigation() {
                 className="relative w-10 h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-[#ff4d00] text-white transition-colors overflow-hidden"
                 data-cursor-hover
                 whileTap={{ scale: 0.85, rotate: 15 }}
+                title={theme === "light" ? "Switch to dark" : "Switch to light"}
               >
                 <AnimatePresence mode="wait">
                   {theme === "light" ? (
@@ -149,10 +151,20 @@ export function Navigation() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+            data-cursor-hover
           >
-            <motion.span className="w-6 h-px bg-white origin-center" animate={isMobileMenuOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }} />
-            <motion.span className="w-6 h-px bg-white" animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }} />
-            <motion.span className="w-6 h-px bg-white origin-center" animate={isMobileMenuOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }} />
+            <motion.span
+              className="w-6 h-px bg-white origin-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+              animate={isMobileMenuOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
+            />
+            <motion.span
+              className="w-6 h-px bg-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+              animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+            />
+            <motion.span
+              className="w-6 h-px bg-white origin-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+              animate={isMobileMenuOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
+            />
           </button>
         </nav>
       </motion.header>
@@ -160,7 +172,11 @@ export function Navigation() {
       {/* Mobile Menu */}
       <motion.div
         initial={false}
-        animate={isMobileMenuOpen ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0, pointerEvents: "none" }}
+        animate={
+          isMobileMenuOpen
+            ? { opacity: 1, pointerEvents: "auto" }
+            : { opacity: 0, pointerEvents: "none" }
+        }
         transition={{ duration: 0.3 }}
         className="fixed inset-0 z-40 bg-background/98 backdrop-blur-xl md:hidden"
       >
@@ -173,7 +189,7 @@ export function Navigation() {
                 animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 0.1 + index * 0.1 }}
               >
-                
+                <a
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-4xl font-serif hover:text-[#ff4d00] transition-colors"
@@ -184,6 +200,7 @@ export function Navigation() {
             ))}
           </ul>
 
+          {/* Mobile Controls */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={isMobileMenuOpen ? { opacity: 1 } : { opacity: 0 }}

@@ -6,6 +6,7 @@ import { FadeIn, TextReveal, Magnetic } from "@/components/animations"
 import { ArrowUpRight, Mail, Github, Linkedin, ArrowUp, Sun, Moon } from "lucide-react"
 import Link from "next/link"
 import { useLang, useTheme } from "@/components/providers"
+import { AnimatedBackground } from "@/components/animated-background"
 
 const socialLinks = [
   { name: "GitHub",   url: "https://github.com/helenmoncayo",    icon: Github },
@@ -49,6 +50,8 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-32 md:py-48 px-6 md:px-12 lg:px-24 relative transition-colors duration-700 bg-[#fcfaf7] dark:bg-[#111] text-[#111] dark:text-white">
+      {/* Fondo animado */}
+      <AnimatedBackground />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 mb-40">

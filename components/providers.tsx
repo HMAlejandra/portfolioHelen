@@ -11,12 +11,7 @@ interface LangContextType {
 }
 
 const translations: Record<string, Record<Lang, string>> = {
-  // NAV
-  "nav.about":        { en: "About",        es: "Sobre mí" },
-  "nav.projects":     { en: "Projects",     es: "Proyectos" },
-  "nav.experience":   { en: "Experience",   es: "Experiencia" },
-  "nav.testimonials": { en: "Testimonials", es: "Testimonios" },
-  "nav.contact":      { en: "Contact",      es: "Contacto" },
+  
 
   // HERO
   "hero.role":        { en: "Software Engineer & Creative Developer", es: "Ingeniería de Software & Desarrolladora Creativa" },

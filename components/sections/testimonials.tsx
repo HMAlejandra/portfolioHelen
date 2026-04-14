@@ -47,7 +47,12 @@ function StarRating({ count }: { count: number }) {
   return (
     <div className="flex gap-1">
       {Array.from({ length: count }).map((_, i) => (
-        <motion.div key={i} initial={{ scale: 0, rotate: -30 }} animate={{ scale: 1, rotate: 0 }} transition={{ delay: i * 0.08, type: "spring", stiffness: 400 }}>
+        <motion.div
+          key={i}
+          initial={{ scale: 0, rotate: -30 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ delay: i * 0.08, type: "spring", stiffness: 400 }}
+        >
           <Star className="w-3 h-3 fill-[#ff4d00] text-[#ff4d00]" />
         </motion.div>
       ))}
@@ -57,7 +62,6 @@ function StarRating({ count }: { count: number }) {
 
 export function Testimonials() {
   const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
   const [active, setActive] = useState(0)
   const [direction, setDirection] = useState(1)
   const { lang, t } = useLang()
@@ -81,19 +85,17 @@ export function Testimonials() {
       ref={sectionRef}
       className="py-32 md:py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-background"
     >
-      {/* PCB decorations */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none" aria-hidden>
         <path d="M200 0v150h400v80" fill="none" stroke="#ff4d00" strokeWidth="1" />
         <circle cx="600" cy="230" r="3" fill="#ff4d00" />
         <path d="M900 500h-200v-150" fill="none" stroke="#ff4d00" strokeWidth="1" />
         <circle cx="700" cy="350" r="3" fill="#ff4d00" />
       </svg>
-      <div className="absolute top-24 right-[10%] font-mono text-[#ff4d00] opacity-[0.06] text-xs select-none pointer-events-none">{"<testimonials />"}</div>
-      <div className="absolute bottom-24 left-[6%] font-mono text-[#ff4d00] opacity-[0.06] text-4xl select-none pointer-events-none">{"\" \""}</div>
+      <div className="absolute top-24 right-[10%] font-mono text-[#ff4d00] opacity-[0.06] text-xs select-none pointer-events-none">
+        {"<testimonials />"}
+      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-
-        {/* Header */}
         <FadeIn>
           <div className="flex items-center gap-4 mb-16 md:mb-24">
             <span className="relative flex h-3 w-3">
@@ -101,7 +103,7 @@ export function Testimonials() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff4d00]" />
             </span>
             <span className="text-sm tracking-[0.3em] uppercase font-black text-muted-foreground/60">
-              {lang === "en" ? "System.Social_Proof" : "Sistema.Prueba_Social"}
+              {t("test.system")}
             </span>
             <div className="h-[1px] flex-1 max-w-32 bg-[#ff4d00]/20" />
           </div>
@@ -117,8 +119,6 @@ export function Testimonials() {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-
-          {/* Main card */}
           <div className="lg:col-span-8 relative">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
@@ -154,10 +154,6 @@ export function Testimonials() {
                     <div className="relative flex-shrink-0">
                       <div className="absolute -top-1 -left-1 w-14 h-14 rounded-full border border-[#ff4d00]/40" />
                       <div className="w-12 h-12 rounded-full overflow-hidden bg-secondary border-2 border-[#ff4d00]/20">
-                        {/* 
-                          ⬇️ REEMPLAZA /placeholder-user.jpg con la foto real
-                          Ej: /testimonial-carlos.jpg
-                        */}
                         <Image
                           src={current.image}
                           alt={current.name}
@@ -179,9 +175,13 @@ export function Testimonials() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation */}
             <div className="flex items-center gap-3 mt-8">
-              <motion.button onClick={() => paginate(-1)} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-[#ff4d00] hover:text-[#ff4d00] transition-colors" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} data-cursor-hover>
+              <motion.button
+                onClick={() => paginate(-1)}
+                className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-[#ff4d00] hover:text-[#ff4d00] transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <ChevronLeft className="w-4 h-4" />
               </motion.button>
 
@@ -193,20 +193,28 @@ export function Testimonials() {
                     className="relative h-1.5 rounded-full overflow-hidden bg-border"
                     animate={{ width: i === active ? 32 : 12 }}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    data-cursor-hover
                   >
-                    <motion.div className="absolute inset-0 bg-[#ff4d00]" animate={{ scaleX: i === active ? 1 : 0 }} style={{ originX: 0 }} transition={{ duration: 0.3 }} />
+                    <motion.div
+                      className="absolute inset-0 bg-[#ff4d00]"
+                      animate={{ scaleX: i === active ? 1 : 0 }}
+                      style={{ originX: 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </motion.button>
                 ))}
               </div>
 
-              <motion.button onClick={() => paginate(1)} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-[#ff4d00] hover:text-[#ff4d00] transition-colors" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} data-cursor-hover>
+              <motion.button
+                onClick={() => paginate(1)}
+                className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-[#ff4d00] hover:text-[#ff4d00] transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <ChevronRight className="w-4 h-4" />
               </motion.button>
             </div>
           </div>
 
-          {/* Side mini-cards */}
           <div className="lg:col-span-4 space-y-4 hidden lg:block">
             {testimonials.map((item, i) => (
               <motion.button
@@ -218,11 +226,16 @@ export function Testimonials() {
                     : "border-border/50 bg-secondary/20 hover:border-[#ff4d00]/20"
                 }`}
                 whileHover={{ x: -4 }}
-                data-cursor-hover
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 rounded-full overflow-hidden bg-secondary flex-shrink-0 border border-border">
-                    <Image src={item.image} alt={item.name} width={32} height={32} className="w-full h-full object-cover grayscale" />
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-cover grayscale"
+                    />
                   </div>
                   <div>
                     <p className="text-xs font-black">{item.name}</p>
@@ -232,18 +245,11 @@ export function Testimonials() {
                 <p className="text-[11px] text-muted-foreground line-clamp-2 italic">
                   &ldquo;{(lang === "en" ? item.quote_en : item.quote_es).slice(0, 80)}&hellip;&rdquo;
                 </p>
-                {i === active && <motion.div className="mt-2 h-0.5 bg-[#ff4d00] rounded-full" layoutId="activeBar" />}
+                {i === active && (
+                  <motion.div className="mt-2 h-0.5 bg-[#ff4d00] rounded-full" layoutId="activeBar" />
+                )}
               </motion.button>
             ))}
-
-            {/* Hint para reemplazar pictures */}
-            <div className="mt-6 p-3 rounded-lg border border-dashed border-[#ff4d00]/30 bg-[#ff4d00]/5">
-              <p className="text-[9px] font-mono text-[#ff4d00]/60 text-center leading-relaxed">
-                {lang === "en"
-                  ? "// Replace /placeholder-user.jpg\n// with real testimonial photos"
-                  : "// Reemplaza /placeholder-user.jpg\n// con fotos reales"}
-              </p>
-            </div>
           </div>
         </div>
       </div>

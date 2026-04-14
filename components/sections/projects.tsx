@@ -117,7 +117,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           </AnimatePresence>
         </motion.div>
 
-        {/* LADO TEXTO: Estilo Editor de Código */}
+        {}
         <div className={index % 2 === 1 ? "md:order-1 md:text-right" : ""}>
           <div className={`flex items-center gap-3 mb-6 ${index % 2 === 1 ? "md:justify-end" : ""}`}>
             <span className="w-2 h-2 bg-[#ff4d00] rounded-full animate-pulse" />

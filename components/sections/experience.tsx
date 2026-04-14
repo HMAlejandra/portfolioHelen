@@ -9,8 +9,8 @@ import { AnimatedBackground } from "@/components/animated-background"
 
 const experiences = [
   {
-    period_en: "2026 — Present",
-    period_es: "2026 — Presente",
+    period_en: "2021 — Present",
+    period_es: "2021 — Presente",
     role_en: "Software Engineer",
     role_es: "Ingeniera de Software",
     company: "Freelance & Personal Projects",
@@ -21,8 +21,8 @@ const experiences = [
     icon: <Globe className="w-4 h-4" />,
   },
   {
-    period_en: "2023 — 2024",
-    period_es: "2023 — 2024",
+    period_en: "2026 Present",
+    period_es: "2026 Presente",
     role_en: "Game Developer (Academic)",
     role_es: "Desarrolladora de Juegos (Académico)",
     company: "UCC — Universidad Cooperativa",

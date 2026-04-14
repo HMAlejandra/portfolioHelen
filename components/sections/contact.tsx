@@ -10,7 +10,7 @@ import { AnimatedBackground } from "@/components/animated-background"
 
 const socialLinks = [
   { name: "GitHub",   url: "https://github.com/HMAlejandra",    icon: Github },
-  { name: "LinkedIn", url: "https://linkedin.com/in/helenmoncayo", icon: Linkedin },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/helen-moncayo-2b4837207/", icon: Linkedin },
 ]
 
 function EscapeCard() {

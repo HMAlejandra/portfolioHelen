@@ -6,6 +6,7 @@ import Image from "next/image"
 import { FadeIn, TextReveal, Magnetic } from "@/components/animations"
 import { ArrowUpRight, Github } from "lucide-react"
 import { useLang } from "@/components/providers"
+import { AnimatedBackground } from "@/components/animated-background"
 
 export function Projects() {
   const { t } = useLang()
@@ -54,6 +55,8 @@ export function Projects() {
       id="projects"
       className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-[#fcfaf7] dark:bg-[#0d0d0d]"
     >
+      {/* Fondo animado */}
+      <AnimatedBackground />
       <svg className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none">
         <path d="M0 400h200v200h300v400" fill="none" stroke="#ff4d00" strokeWidth="1" />
         <circle cx="500" cy="1000" r="4" fill="#ff4d00" />

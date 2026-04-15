@@ -9,20 +9,20 @@ import { AnimatedBackground } from "@/components/animated-background"
 
 const experiences = [
   {
-    period_en: "2021 — Present",
-    period_es: "2021 — Presente",
-    role_en: "Software Engineer",
-    role_es: "Ingeniera de Software",
+    period_en: "2024 — Present",
+    period_es: "2024 — Presente",
+    role_en: "Full Stack Developer",
+    role_es: "Desarrolladora Full Stack",
     company: "Freelance & Personal Projects",
-    companyUrl: "https://github.com/HMAlejandra",
+    companyUrl: "https://github.com/helenmoncayo",
     description_en: "Building end-to-end web applications for clients and academic projects. Designing responsive UIs with Next.js and TailwindCSS, integrating REST APIs and deploying on AWS (EC2, S3, Amplify). Focus on clean code and user experience.",
     description_es: "Construyendo aplicaciones web de extremo a extremo para clientes y proyectos académicos. Diseñando interfaces con Next.js y TailwindCSS, integrando APIs REST y desplegando en AWS (EC2, S3, Amplify). Enfoque en código limpio y experiencia de usuario.",
     technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "AWS", "Node.js"],
     icon: <Globe className="w-4 h-4" />,
   },
   {
-    period_en: "2026 Present",
-    period_es: "2026 Presente",
+    period_en: "2024 — 2025",
+    period_es: "2024 — 2025",
     role_en: "Game Developer (Academic)",
     role_es: "Desarrolladora de Juegos (Académico)",
     company: "UCC — Universidad Cooperativa",
@@ -33,8 +33,8 @@ const experiences = [
     icon: <Code2 className="w-4 h-4" />,
   },
   {
-    period_en: "2023",
-    period_es: "2023",
+    period_en: "2024",
+    period_es: "2024",
     role_en: "Backend & Database Engineer",
     role_es: "Ingeniería Backend & Bases de Datos",
     company: "Academic Project — E-commerce Platform",
@@ -45,8 +45,8 @@ const experiences = [
     icon: <Layers className="w-4 h-4" />,
   },
   {
-    period_en: "2022 — 2023",
-    period_es: "2022 — 2023",
+    period_en: "2024 — 2026",
+    period_es: "2024 — 2026",
     role_en: "Software Engineering Student",
     role_es: "Estudiante de Ingeniería de Software",
     company: "Universidad Cooperativa de Colombia",
@@ -81,6 +81,35 @@ export function Experience() {
       <AnimatedBackground />
 
       <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* ── Título de sección ── */}
+        <FadeIn>
+          <div className="flex items-center gap-4 mb-12 md:mb-16">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-75" />
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff4d00]" />
+            </span>
+            <span className="text-sm tracking-[0.3em] uppercase font-black text-[#111111]/40 dark:text-white/40">
+              {t("exp.title").split(" ")[0] === "Where" ? "System.Experience_Log" : "Sistema.Registro_Experiencia"}
+            </span>
+            <div className="h-[1px] flex-1 max-w-32 bg-[#ff4d00]/20" />
+          </div>
+        </FadeIn>
+
+        <div className="mb-16 overflow-visible" style={{ paddingBottom: "0.2em" }}>
+          <h2
+            className="font-serif font-normal overflow-visible text-[#111111] dark:text-white"
+            style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: "1.0", paddingBottom: "0.15em" }}
+          >
+            <TextReveal delay={0.1}>{t("exp.title")}</TextReveal>
+          </h2>
+          <h2
+            className="font-serif font-normal overflow-visible text-[#ff4d00] italic"
+            style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: "1.0", paddingBottom: "0.15em" }}
+          >
+            <TextReveal delay={0.2}>{t("exp.title2")}</TextReveal>
+          </h2>
+        </div>
 
         {/* Timeline */}
         <div className="relative">

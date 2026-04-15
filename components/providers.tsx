@@ -63,7 +63,7 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // CONTACT
   "contact.title1":    { en: "Let's work",   es: "Trabajemos" },
-  "contact.title2":    { en: "together",     es: "juntas" },
+  "contact.title2":    { en: "together",     es: "juntos" },
   "contact.subtitle":  { en: "My inbox is always open for logical challenges and architectural discussions.", es: "Mi bandeja siempre está abierta para retos lógicos y discusiones de arquitectura." },
   "contact.status":    { en: "System_Status: Online", es: "Estado_Sistema: En línea" },
   "contact.available": { en: "Available for new challenges", es: "Disponible para nuevos retos" },

@@ -151,16 +151,17 @@ function ProjectRow({
           </div>
 
           {/* Tags — solo desktop */}
-          <div className="hidden lg:flex flex-wrap gap-1.5 flex-shrink-0 max-w-[200px]">
+          <div className="hidden lg:flex flex-wrap gap-2 flex-shrink-0 max-w-[220px]">
             {project.tags.slice(0, 3).map((tag) => (
               <motion.span
                 key={tag}
                 animate={{
-                  borderColor: hovered ? "rgba(255,77,0,0.5)" : "rgba(17,17,17,0.1)",
-                  color:       hovered ? "#ff4d00" : "rgba(17,17,17,0.45)",
+                  borderColor: hovered ? "rgba(255,77,0,0.6)" : "rgba(17,17,17,0.2)",
+                  color:       hovered ? "#ff4d00" : "rgba(17,17,17,0.65)",
+                  backgroundColor: hovered ? "rgba(255,77,0,0.06)" : "transparent",
                 }}
                 transition={{ duration: 0.2 }}
-                className="px-2 py-0.5 text-[9px] font-mono rounded-full border dark:border-white/10 dark:text-white/45"
+                className="px-3 py-1 text-[11px] font-mono font-bold rounded-full border dark:border-white/20 dark:text-white/65"
               >
                 {tag}
               </motion.span>
@@ -274,22 +275,22 @@ export function Projects() {
                 </motion.div>
 
                 <motion.div style={{ y: titleY }}>
-                  <div className="overflow-hidden">
+                  <div className="overflow-visible pb-2">
                     <motion.h2
                       initial={{ y: 80, opacity: 0 }}
                       animate={isHeaderInView ? { y: 0, opacity: 1 } : {}}
                       transition={{ duration: 0.9, delay: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
-                      className="text-6xl md:text-8xl lg:text-9xl font-serif leading-[0.85] text-[#111111] dark:text-white"
+                      className="text-6xl md:text-8xl lg:text-9xl font-serif leading-[0.95] text-[#111111] dark:text-white"
                     >
                       {t("projects.title1")}
                     </motion.h2>
                   </div>
-                  <div className="overflow-hidden">
+                  <div className="overflow-visible pb-3">
                     <motion.h2
                       initial={{ y: 80, opacity: 0 }}
                       animate={isHeaderInView ? { y: 0, opacity: 1 } : {}}
                       transition={{ duration: 0.9, delay: 0.78, ease: [0.25, 0.1, 0.25, 1] }}
-                      className="text-6xl md:text-8xl lg:text-9xl font-serif leading-[0.85] text-[#ff4d00] italic"
+                      className="text-6xl md:text-8xl lg:text-9xl font-serif leading-[0.95] text-[#ff4d00] italic"
                     >
                       {t("projects.title2")}
                     </motion.h2>
@@ -305,14 +306,14 @@ export function Projects() {
                     rel="noopener noreferrer"
                     className="group flex items-center gap-4 text-xs font-black tracking-widest uppercase"
                   >
-                    <div className="w-14 h-14 rounded-full border border-[#111111]/10 dark:border-white/10 flex items-center justify-center group-hover:bg-[#ff4d00] group-hover:border-[#ff4d00] transition-all duration-500">
-                      <Github className="w-6 h-6 group-hover:text-white transition-colors dark:text-white" />
+                    <div className="w-16 h-16 rounded-full border-2 border-[#ff4d00]/40 dark:border-[#ff4d00]/50 bg-[#ff4d00]/5 flex items-center justify-center group-hover:bg-[#ff4d00] group-hover:border-[#ff4d00] transition-all duration-500">
+                      <Github className="w-7 h-7 text-[#ff4d00] group-hover:text-white transition-colors" />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-[#111111]/40 dark:text-white/40 font-mono text-[9px]">
+                      <span className="text-[#111111]/50 dark:text-white/50 font-mono text-[10px] font-bold">
                         {t("projects.root")}
                       </span>
-                      <span className="text-[#111111] dark:text-white">{t("projects.github")}</span>
+                      <span className="text-[#111111] dark:text-white font-black text-sm">{t("projects.github")}</span>
                     </div>
                   </a>
                 </Magnetic>

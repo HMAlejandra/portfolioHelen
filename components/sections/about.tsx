@@ -170,9 +170,9 @@ const metas = [
 
 // ─── Tabs Panel ──────────────────────────────────────────────────────────────
 const TABS = [
-  { id: "skills",   label: "Habilidades de Software", icon: <Code2 className="w-3.5 h-3.5" /> },
-  { id: "studies",  label: "Estudios",                icon: <GraduationCap className="w-3.5 h-3.5" /> },
-  { id: "goals",    label: "Metas",                   icon: <Target className="w-3.5 h-3.5" /> },
+  { id: "skills",   label_en: "Software Skills",  label_es: "Habilidades de Software", icon: <Code2 className="w-3.5 h-3.5" /> },
+  { id: "studies",  label_en: "Studies",           label_es: "Estudios",                icon: <GraduationCap className="w-3.5 h-3.5" /> },
+  { id: "goals",    label_en: "Goals",             label_es: "Metas",                   icon: <Target className="w-3.5 h-3.5" /> },
 ]
 
 function SkillsPanel() {
@@ -227,7 +227,7 @@ function GoalsPanel() {
 export function About() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const [activeTab, setActiveTab] = useState("skills")
 
   const mouseX = useMotionValue(0)
@@ -310,7 +310,7 @@ export function About() {
                   >
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                      <span className="text-[9px] font-mono text-white/80 tracking-widest uppercase">Available for hire</span>
+                      <span className="text-[9px] font-mono text-white/80 tracking-widest uppercase">{lang === "en" ? "Available for hire" : "Disponible para contratar"}</span>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -333,9 +333,9 @@ export function About() {
               viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }}
               className="grid grid-cols-3 gap-3"
             >
-              <StatCard value={3}  suffix="+" label="Years coding"    delay={0.5} />
-              <StatCard value={10} suffix="+" label="Projects built"  delay={0.6} />
-              <StatCard value={5}  suffix="+" label="Technologies"    delay={0.7} />
+              <StatCard value={3}  suffix="+" label={lang === "en" ? "Years coding"   : "Años de código"}   delay={0.5} />
+              <StatCard value={10} suffix="+" label={lang === "en" ? "Projects built" : "Proyectos"}          delay={0.6} />
+              <StatCard value={5}  suffix="+" label={lang === "en" ? "Technologies"   : "Tecnologías"}        delay={0.7} />
             </motion.div>
 
             {/* CV download — columna izquierda */}
@@ -370,7 +370,7 @@ export function About() {
           {/* ── Col derecha: texto + tabs acordeón ── */}
           <div className="lg:col-span-7 space-y-10">
             <FadeIn delay={0.3}>
-              <h2 className="text-5xl md:text-7xl font-serif font-normal leading-[0.9] mb-12 text-[#111111] dark:text-white">
+              <h2 className="text-5xl md:text-7xl font-serif font-normal leading-[0.9] mb-12 text-[#111111] dark:text-white overflow-visible pb-2">
                 {t("about.hello")} <br />
                 <motion.span
                   className="text-[#ff4d00] inline-block"
@@ -427,7 +427,7 @@ export function About() {
                       />
                     )}
                     <span className="relative z-10">{tab.icon}</span>
-                    <span className="relative z-10 hidden sm:inline">{tab.label}</span>
+                    <span className="relative z-10 hidden sm:inline">{lang === "en" ? tab.label_en : tab.label_es}</span>
                   </button>
                 ))}
               </div>

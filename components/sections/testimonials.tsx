@@ -11,7 +11,7 @@ import { AnimatedBackground } from "@/components/animated-background"
 const testimonials = [
   {
     id: 1,
-    name: "Daniel Arteaga",
+    name: "Carlos Jiménez",
     role_en: "Professor of Software Engineering",
     role_es: "Profesor de Ingeniería de Software",
     company: "Universidad Cooperativa de Colombia",
@@ -110,17 +110,17 @@ export function Testimonials() {
           </div>
         </FadeIn>
 
-        {/* TÍTULO CORREGIDO — overflow-visible + pb para que no se corte */}
-        <div className="mb-16 overflow-visible pb-4">
+        {/* Título — overflow-visible + paddingBottom para que p/y no se corten */}
+        <div className="mb-16 overflow-visible" style={{ paddingBottom: "0.3em" }}>
           <h2
-            className="font-serif leading-[0.9] mb-2 overflow-visible"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)", paddingBottom: "0.15em" }}
+            className="font-serif leading-[1.0] overflow-visible"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)", paddingBottom: "0.2em", display: "block" }}
           >
             <TextReveal delay={0.1}>{t("test.title")}</TextReveal>
           </h2>
           <h2
-            className="font-serif leading-[0.9] text-[#ff4d00] overflow-visible"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)", paddingBottom: "0.15em" }}
+            className="font-serif leading-[1.0] text-[#ff4d00] overflow-visible"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)", paddingBottom: "0.2em", display: "block" }}
           >
             <TextReveal delay={0.2}>{t("test.title2")}</TextReveal>
           </h2>

@@ -26,6 +26,13 @@ export function Navigation() {
     { key: "nav.contact",      href: "#contact" },
   ]
 
+  // Cuando hay scroll: fondo claro → botones oscuros visibles
+  // Cuando no hay scroll (hero naranja/oscuro): botones blancos con fondo semitransparente
+  const ctrlBg    = isScrolled ? "bg-foreground/8 dark:bg-white/10"  : "bg-white/15"
+  const ctrlBorder= isScrolled ? "border-foreground/20 dark:border-white/20" : "border-white/20"
+  const ctrlText  = isScrolled ? "text-foreground dark:text-white"   : "text-white"
+  const ctrlTextMuted = isScrolled ? "text-foreground/60 dark:text-white/70 hover:text-foreground" : "text-white/80 hover:text-white"
+
   return (
     <>
       <motion.header
@@ -44,7 +51,9 @@ export function Navigation() {
           <Magnetic strength={6}>
             <a
               href="#"
-              className="text-lg font-serif tracking-tight text-white font-bold drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
+              className={`text-lg font-serif tracking-tight font-bold drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)] transition-colors duration-300 ${
+                isScrolled ? "text-foreground" : "text-white"
+              }`}
               data-cursor-hover
             >
               Helen<span className="text-[#ff4d00]">.</span>
@@ -63,7 +72,7 @@ export function Navigation() {
                 <Magnetic strength={6}>
                   <a
                     href={item.href}
-                    className={`text-sm font-bold transition-colors relative group drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] ${
+                    className={`text-sm font-bold transition-colors relative group drop-shadow-[0_1px_3px_rgba(0,0,0,0.3)] ${
                       isScrolled
                         ? "text-foreground hover:text-[#ff4d00]"
                         : "text-white hover:text-[#ff4d00]"
@@ -88,7 +97,7 @@ export function Navigation() {
             {/* Language toggle */}
             <Magnetic strength={4}>
               <div
-                className="relative flex items-center bg-white/15 backdrop-blur-sm border border-white/20 rounded-full p-1 cursor-pointer"
+                className={`relative flex items-center rounded-full p-1 cursor-pointer backdrop-blur-sm border transition-all duration-300 ${ctrlBg} ${ctrlBorder}`}
                 data-cursor-hover
               >
                 <motion.div
@@ -102,7 +111,7 @@ export function Navigation() {
                     key={l}
                     onClick={() => setLang(l)}
                     className={`relative z-10 px-3 py-1 text-[10px] font-black tracking-widest rounded-full transition-colors duration-200 ${
-                      lang === l ? "text-white" : "text-white/80 hover:text-white"
+                      lang === l ? "text-white" : ctrlTextMuted
                     }`}
                   >
                     {l.toUpperCase()}
@@ -115,7 +124,7 @@ export function Navigation() {
             <Magnetic strength={4}>
               <motion.button
                 onClick={toggleTheme}
-                className="relative w-10 h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-[#ff4d00] text-white transition-colors overflow-hidden"
+                className={`relative w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#ff4d00] hover:!text-white transition-all duration-300 overflow-hidden backdrop-blur-sm border ${ctrlBg} ${ctrlBorder} ${ctrlText}`}
                 data-cursor-hover
                 whileTap={{ scale: 0.85, rotate: 15 }}
                 title={theme === "light" ? "Switch to dark" : "Switch to light"}
@@ -154,15 +163,15 @@ export function Navigation() {
             data-cursor-hover
           >
             <motion.span
-              className="w-6 h-px bg-white origin-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+              className={`w-6 h-px origin-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] transition-colors duration-300 ${isScrolled ? "bg-foreground" : "bg-white"}`}
               animate={isMobileMenuOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
             />
             <motion.span
-              className="w-6 h-px bg-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+              className={`w-6 h-px drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] transition-colors duration-300 ${isScrolled ? "bg-foreground" : "bg-white"}`}
               animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
             />
             <motion.span
-              className="w-6 h-px bg-white origin-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+              className={`w-6 h-px origin-center drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] transition-colors duration-300 ${isScrolled ? "bg-foreground" : "bg-white"}`}
               animate={isMobileMenuOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
             />
           </button>
@@ -200,7 +209,6 @@ export function Navigation() {
             ))}
           </ul>
 
-          {/* Mobile Controls */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={isMobileMenuOpen ? { opacity: 1 } : { opacity: 0 }}
@@ -226,7 +234,6 @@ export function Navigation() {
                 </button>
               ))}
             </div>
-
             <button
               onClick={toggleTheme}
               className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-[#ff4d00] hover:text-white transition-colors"

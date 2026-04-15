@@ -96,25 +96,13 @@ export default function ProjectPage() {
           {/* Título con animación letra a letra */}
           <div className="overflow-hidden mb-8">
             <motion.h1
-              className="font-serif leading-[0.85] text-[#111] dark:text-white"
-              style={{ fontSize: "clamp(3rem, 10vw, 9rem)" }}
+              className="font-serif text-[#111] dark:text-white overflow-visible"
+              style={{ fontSize: "clamp(2rem, 5vw, 6rem)", lineHeight: "1.05", paddingBottom: "0.1em" }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.4, ease: [0.215, 0.61, 0.355, 1] }}
             >
-              {title.split("").map((char, i) => (
-                <motion.span
-                  key={i}
-                  className="inline-block"
-                  initial={{ y: 120, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 0.7,
-                    delay: 0.4 + i * 0.03,
-                    ease: [0.215, 0.61, 0.355, 1],
-                  }}
-                  style={{ display: char === " " ? "inline" : "inline-block", minWidth: char === " " ? "0.25em" : undefined }}
-                >
-                  {char}
-                </motion.span>
-              ))}
+              {title}
             </motion.h1>
           </div>
 

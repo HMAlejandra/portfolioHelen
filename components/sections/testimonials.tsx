@@ -103,7 +103,7 @@ export function Testimonials() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-75" />
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff4d00]" />
             </span>
-            <span className="text-sm tracking-[0.3em] uppercase font-black text-muted-foreground/60">
+            <span className="text-[10px] md:text-sm tracking-[0.15em] md:tracking-[0.3em] uppercase font-black text-muted-foreground/60 truncate max-w-[180px] md:max-w-none">
               {t("test.system")}
             </span>
             <div className="h-[1px] flex-1 max-w-32 bg-[#ff4d00]/20" />
@@ -114,13 +114,13 @@ export function Testimonials() {
         <div className="mb-16 overflow-visible" style={{ paddingBottom: "0.3em" }}>
           <h2
             className="font-serif leading-[1.0] overflow-visible"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)", paddingBottom: "0.2em", display: "block" }}
+            style={{ fontSize: "clamp(1.8rem, 7vw, 4.5rem)", paddingBottom: "0.2em", display: "block" }}
           >
             <TextReveal delay={0.1}>{t("test.title")}</TextReveal>
           </h2>
           <h2
             className="font-serif leading-[1.0] text-[#ff4d00] overflow-visible"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 4.5rem)", paddingBottom: "0.2em", display: "block" }}
+            style={{ fontSize: "clamp(1.8rem, 7vw, 4.5rem)", paddingBottom: "0.2em", display: "block" }}
           >
             <TextReveal delay={0.2}>{t("test.title2")}</TextReveal>
           </h2>

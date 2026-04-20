@@ -18,7 +18,7 @@ const experiences = [
     period_es: "2024 — Presente",
     role_en: "Full Stack Developer",
     role_es: "Desarrolladora Full Stack",
-    company: "",
+    company: "Freelance & Personal Projects",
     technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "AWS", "Node.js"],
   },
   {
@@ -28,7 +28,7 @@ const experiences = [
     period_es: "2023 — 2024",
     role_en: "Game Developer (Academic)",
     role_es: "Desarrolladora de Juegos",
-    company: "",
+    company: "UCC — Universidad Cooperativa",
     technologies: ["Unity", "C#", "Game Design", "AI Logic", "UX Research"],
   },
   {
@@ -38,7 +38,7 @@ const experiences = [
     period_es: "2023",
     role_en: "Backend & Database Engineer",
     role_es: "Ingeniería Backend & BD",
-    company: "",
+    company: "Academic — E-commerce",
     technologies: ["Python", "Flask", "PostgreSQL", "MySQL", "Docker", "GitHub Actions"],
   },
   {
@@ -48,7 +48,7 @@ const experiences = [
     period_es: "2022 — 2023",
     role_en: "Software Engineering Student",
     role_es: "Estudiante de Ing. de Software",
-    company: "",
+    company: "Universidad Cooperativa de Colombia",
     technologies: ["Java", "C++", "Python", "SQL", "UML", "Scrum"],
   },
 ]
@@ -160,14 +160,14 @@ function ExperienceRow({ exp, index }: { exp: typeof experiences[0]; index: numb
             <motion.h3
               animate={{ color: hovered ? "#ff4d00" : "inherit", x: hovered ? 4 : 0 }}
               transition={{ duration: 0.22 }}
-              className="flex-1 min-w-0 font-serif text-[#111] dark:text-white leading-none overflow-visible whitespace-nowrap"
-              style={{ fontSize: "clamp(1.1rem, 2.8vw, 2.4rem)", paddingBottom: "0.05em" }}
+              className="flex-1 min-w-0 font-serif text-[#111] dark:text-white leading-tight overflow-visible"
+              style={{ fontSize: "clamp(1rem, 4vw, 2.4rem)", paddingBottom: "0.05em" }}
             >
               {role}
             </motion.h3>
 
             {/* Período — más grande y visible */}
-            <div className="hidden md:flex flex-col items-end gap-0.5 flex-shrink-0 min-w-[140px] text-right">
+            <div className="hidden lg:flex flex-col items-end gap-0.5 flex-shrink-0 min-w-[140px] text-right">
               <motion.span
                 animate={{ color: hovered ? "#ff4d00" : "rgba(17,17,17,0.65)" }}
                 transition={{ duration: 0.2 }}
@@ -251,7 +251,7 @@ export function Experience() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-75" />
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff4d00]" />
             </span>
-            <span className="text-sm tracking-[0.3em] uppercase font-black text-[#111111]/40 dark:text-white/40">
+            <span className="text-[10px] md:text-sm tracking-[0.15em] md:tracking-[0.3em] uppercase font-black text-[#111111]/40 dark:text-white/40 truncate max-w-[180px] md:max-w-none">
               {lang === "en" ? "System.Experience_Log" : "Sistema.Registro_Experiencia"}
             </span>
             <div className="h-[1px] flex-1 max-w-32 bg-[#ff4d00]/20" />
@@ -262,13 +262,13 @@ export function Experience() {
         <div className="mb-20 overflow-visible" style={{ paddingBottom: "0.25em" }}>
           <h2
             className="font-serif font-normal overflow-visible text-[#111111] dark:text-white"
-            style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: "1.0", paddingBottom: "0.15em" }}
+            style={{ fontSize: "clamp(2rem, 7vw, 7rem)", lineHeight: "1.05", paddingBottom: "0.15em" }}
           >
             <TextReveal delay={0.1}>{t("exp.title")}</TextReveal>
           </h2>
           <h2
             className="font-serif font-normal overflow-visible text-[#ff4d00] italic"
-            style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: "1.0", paddingBottom: "0.15em" }}
+            style={{ fontSize: "clamp(2rem, 7vw, 7rem)", lineHeight: "1.05", paddingBottom: "0.15em" }}
           >
             <TextReveal delay={0.2}>{t("exp.title2")}</TextReveal>
           </h2>

@@ -37,9 +37,9 @@ function StatCard({ value, suffix, label, delay }: { value: number; suffix: stri
       initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }} transition={{ duration: 0.6, delay }}
       whileHover={{ y: -4, scale: 1.03 }}
-      className="flex flex-col items-center justify-center p-5 rounded-sm border border-[#ff4d00]/20 bg-[#ff4d00]/[0.03] hover:bg-[#ff4d00]/[0.07] hover:border-[#ff4d00]/40 transition-all duration-500 group"
+      className="flex flex-col items-center justify-center p-3 md:p-5 rounded-sm border border-[#ff4d00]/20 bg-[#ff4d00]/[0.03] hover:bg-[#ff4d00]/[0.07] hover:border-[#ff4d00]/40 transition-all duration-500 group"
     >
-      <div className="text-3xl md:text-4xl font-black mb-1 group-hover:scale-110 transition-transform duration-300">
+      <div className="text-xl md:text-4xl font-black mb-1 group-hover:scale-110 transition-transform duration-300">
         <AnimatedCounter target={value} suffix={suffix} />
       </div>
       <p className="text-[9px] font-mono tracking-[0.25em] uppercase text-[#111111]/50 dark:text-white/50 text-center leading-tight">{label}</p>
@@ -272,7 +272,7 @@ export function About() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff4d00] opacity-75" />
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff4d00]" />
             </span>
-            <span className="text-sm tracking-[0.3em] uppercase font-black text-[#111111]/40 dark:text-white/40">{t("about.label")}</span>
+            <span className="text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase font-black text-[#111111]/40 dark:text-white/40 truncate max-w-[200px] md:max-w-none">{t("about.label")}</span>
             <div className="h-[1px] flex-1 max-w-32 bg-[#ff4d00]/20" />
           </div>
         </FadeIn>
@@ -293,7 +293,7 @@ export function About() {
                 />
 
                 <motion.div
-                  className="relative z-10 aspect-[3/4] overflow-hidden rounded-sm shadow-2xl bg-black"
+                  className="relative z-10 aspect-[3/4] max-h-[60vh] md:max-h-none overflow-hidden rounded-sm shadow-2xl bg-black"
                   style={{ x: imgX, y: imgY }}
                 >
                   <div className="w-full h-full transition-all duration-700 group-hover:scale-105"
@@ -331,7 +331,7 @@ export function About() {
             <motion.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-3 gap-3"
+              className="grid grid-cols-3 gap-2 md:gap-3"
             >
               <StatCard value={3}  suffix="+" label={lang === "en" ? "Years coding"   : "Años de código"}   delay={0.5} />
               <StatCard value={10} suffix="+" label={lang === "en" ? "Projects built" : "Proyectos"}          delay={0.6} />
@@ -370,7 +370,7 @@ export function About() {
           {/* ── Col derecha: texto + tabs acordeón ── */}
           <div className="lg:col-span-7 space-y-10">
             <FadeIn delay={0.3}>
-              <h2 className="text-5xl md:text-7xl font-serif font-normal leading-[0.9] mb-12 text-[#111111] dark:text-white overflow-visible pb-2">
+              <h2 className="font-serif font-normal leading-[1.0] mb-12 text-[#111111] dark:text-white overflow-visible pb-2" style={{ fontSize: "clamp(2rem, 7vw, 5rem)" }}>
                 {t("about.hello")} <br />
                 <motion.span
                   className="text-[#ff4d00] inline-block"
@@ -389,7 +389,7 @@ export function About() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="border-l-4 border-[#ff4d00] pl-6 md:pl-10 py-4 bg-[#ff4d00]/[0.03] hover:bg-[#ff4d00]/[0.06] transition-colors duration-500"
             >
-              <p className="text-2xl md:text-3xl lg:text-4xl font-serif leading-[1.2] text-[#111111] dark:text-white">
+              <p className="font-serif leading-[1.2] text-[#111111] dark:text-white" style={{ fontSize: "clamp(1.2rem, 3.5vw, 2.5rem)" }}>
                 <StoryTextReveal delay={0.6}>{t("about.headline")}</StoryTextReveal>
               </p>
             </motion.div>
@@ -413,7 +413,7 @@ export function About() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`relative flex items-center gap-2 px-4 py-2 rounded-sm text-[10px] font-black tracking-widest uppercase transition-all duration-300 ${
+                    className={`relative flex items-center gap-1 md:gap-2 px-2 md:px-4 py-2 rounded-sm text-[10px] font-black tracking-widest uppercase transition-all duration-300 ${
                       activeTab === tab.id
                         ? "text-white"
                         : "text-[#111111]/50 dark:text-white/50 hover:text-[#ff4d00]"
